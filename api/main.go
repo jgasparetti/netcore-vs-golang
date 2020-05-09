@@ -10,16 +10,16 @@ import (
 	"time"
 )
 
-type Response struct {
-	Id   string
+type response struct {
+	ID   string
 	Name string
 	Time int64
 }
 
 func main() {
 	http.HandleFunc("/data", func(w http.ResponseWriter, r *http.Request) {
-		rsp := Response{
-			Id:   "id_" + strconv.Itoa(rand.Int()),
+		rsp := response{
+			ID:   "id_" + strconv.Itoa(rand.Int()),
 			Name: "name_" + strconv.Itoa(rand.Int()),
 			Time: time.Now().Unix(),
 		}
